@@ -1,7 +1,7 @@
 <h2>Ready to Eat Burgers!</h2>
 
 <ul>
-  {{#each burgers}}
+  {{#each burger}}
   {{#unless devoured}}
   {{> burgers/burgers-block devoured=true}}
   {{/unless}}
@@ -12,7 +12,7 @@
 {{!-- <h2>Ready to Eat Burgers!</h2> --}}
 
 <ul>
-  {{#each burgers}}
+  {{#each burger}}
   {{#if devoured}}
   {{> burgers/burgers-block devoured=false}}
   {{/if}}
