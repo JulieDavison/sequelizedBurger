@@ -6,21 +6,20 @@ var db = require("../models");
 
 // Create all our routes and set up logic within those routes where required.
 // show all the burger data in the database 
-router.get("/api/all", function(req,res){
-  db.burger.findAll().then(function(results){
-    res.json(results);
-  });
-});
+// router.get("/api/all", function(req,res){
+//   db.burger.findAll().then(function(results){
+//     res.json(results);
+//   });
+// });
 
 router.get("/", function(req, res) {
-  db.burger.findAll({}).then(function(data) {
-    console.log(data);
-    var hbsObject = {
-      burger: data
-    };
-    console.log(hbsObject);
-    res.render("index", hbsObject);
-  });
+  // db.burger.findAll({}).then(function(data) {
+  //   var hbsObject = {
+  //     burger: data
+  //   };
+  //   res.render("index", hbsObject);
+  // });
+  res.render('index');
 });
 
 
@@ -41,6 +40,7 @@ router.post("/api/burgers", function(req, res) {
 router.put("/api/burgers/:id", function(req, res) {
   db.burger.update({
       devoured: req.body.devoured
+      
     },{
       where: {
         id: req.params.id
@@ -48,6 +48,7 @@ router.put("/api/burgers/:id", function(req, res) {
     }).then(function(result) {
         // Send back the ID of the new quote
         res.json({ id: result.insertId });
+        console.log(req.body.devoured);
       });  
 
 
