@@ -13,13 +13,13 @@ var db = require("../models");
 // });
 
 router.get("/", function(req, res) {
-  // db.burger.findAll({}).then(function(data) {
-  //   var hbsObject = {
-  //     burger: data
-  //   };
-  //   res.render("index", hbsObject);
-  // });
-  res.render('index');
+  db.burger.findAll({}).then(function(data) {
+    var hbsObject = {
+      burger: data
+    };
+    res.render("index", hbsObject);
+  });
+  // res.render('index');
 });
 
 

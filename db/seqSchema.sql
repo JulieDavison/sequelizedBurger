@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS seqBurgers_db;
+-- DROP DATABASE IF EXISTS seqBurgers_db;
 
-CREATE DATABASE seqBurgers_db;
+-- CREATE DATABASE seqBurgers_db;
 USE seqBurgers_db;
 
 CREATE TABLE burgers
