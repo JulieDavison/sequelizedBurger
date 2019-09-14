@@ -17,6 +17,7 @@
     "username": "rtxlanm8iiyw1bw9",
     "password": "iaq82k4mn7z7eiyd",
     "database": "ig00emd8bmzx0yhf",
+    "host": "enqhzd10cxh7hv2e.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
