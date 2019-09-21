@@ -3,7 +3,7 @@
 <ul>
   {{#each burger}}
   {{#unless devoured}}
-  {{> burgers/burgers-block burgername=burgername id=id devoured=devoured}}
+  {{> burgers/burgers-block burgername=burgername id=id devoured=this.devoured}}
   {{/unless}}
   {{/each}}
 </ul>
@@ -14,12 +14,12 @@
 <ul>
   {{#each burger}}
   {{#if devoured}}
-  {{> burgers/burgers-block burgername=burgername id=id devoured=devoured}}
+  {{> burgers/burgers-block burgername=burgername id=id devoured=this.devoured}}
   {{/if}}
   {{/each}}
 </ul>
 
-<h2>Add You Favorite Burgers</h2>
+<h2>Add Your Favorite Burgers</h2>
 <form class="create-form">
 
   <div class="form-group">

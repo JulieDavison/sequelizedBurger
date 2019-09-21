@@ -1,16 +1,16 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(document).ready(function() {
-$(function () {
-  $(".change-devoured").on("click", function (event) {
+  $(document).on("click", ".change-devoured",function (event) {
     event.preventDefault();
     var id = $(this).data("id");
+    var innerText = $(this).text().trim();
+    console.log(innerText);
     // var newDevoured = Boolean($(this).data("devoured"));
-    console.log('Here is our id', id);
     // ret changing devoured to 1 and then 0 or true false?
     var newDevouredState = {
       devoured: 1
     };
-
+    if(innerText !== 'Delete Burger'){
     // Send the PUT request.
     $.ajax({
       url: "/api/burgers/" + id,
@@ -18,11 +18,22 @@ $(function () {
       data: newDevouredState
     }).then(
       function (data) {
-        console.log("changed devoured to", data);
         // Reload the page to get the updated list
-        //location.reload();
+        location.reload();
       }
     ).catch(err => console.log(err));
+    }
+    else {
+      $.ajax({
+        url: "/api/burgers/" + id,
+        type: "DELETE"
+      }).then(
+        function (data) {
+          // Reload the page to get the updated list
+          location.reload();
+        }
+      ).catch(err => console.log(err));
+    }
   });
 
   $(".create-form").on("click", function (event) {
@@ -64,5 +75,4 @@ $(function () {
   
 });
 
-});
 
